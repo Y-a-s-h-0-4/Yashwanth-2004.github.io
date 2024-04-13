@@ -1,0 +1,40 @@
+.main-div {
+  background-color: #FFBFA9;
+  padding: 30px;
+  width: 25vw;
+}
+.t{
+  text-decoration: none;
+}
+
+.custom-input{
+  background-color: #fffeea;
+}
+
+@media (max-width: 1400px) {
+  .main-div {
+    padding: 25px;
+     width: 40vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-div {
+    padding: 25px;
+    width: 50vw; 
+  }
+}
+
+@media(max-width: 700px){
+  .main-div{
+    padding: 20px;
+    width: 80vw;
+  }
+}
+
+@media(max-width: 480px){
+  .main-div{
+    padding: 20px;
+    width: 95vw;
+  }
+}

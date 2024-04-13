@@ -1,0 +1,14 @@
+Color pallete - 1 :
+#FBEAFF
+#845EC2
+#00C9A7
+
+Color pallete - 2 :
+#E0F4FD
+#845EC2
+#368EAA
+
+Color pallete - 3 :
+#F7EEF6
+#000000
+#9F779A

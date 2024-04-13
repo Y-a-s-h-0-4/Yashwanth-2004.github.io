@@ -1,0 +1,79 @@
+# author creation
+POST http://localhost:4000/author-api/author
+Content-Type: application/json
+
+{
+  "userType" : "author",
+  "username":"vikas",
+  "password":"vikas",
+  "email":"vikas@gmail.com"
+}
+
+# author login
+###
+POST http://localhost:4000/author-api/login
+Content-Type: application/json
+
+{
+  "userType":"author",
+  "username":"vikas",
+  "password":"vikas"
+}
+
+# add new article by author
+###
+POST http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+  "articleId":"{{$timestamp}}",
+  "title":"Fundamentals of JavaScript",
+  "category":"programming",
+  "content":"During these formative years of the Web, web pages could only be static, lacking the capability for dynamic behavior after the page was loaded in the browser. There was a desire in the flourishing web development scene to remove this limitation, so in 1995, Netscape decided to add a scripting language to Navigator. They pursued two routes to achieve this: collaborating with Sun Microsystems to embed the Java programming language, while also hiring Brendan Eich to embed the Scheme language.",
+  "dateOfCreation":"{{$datetime iso8601}}",
+  "dateOfModification":"{{$datetime iso8601}}",
+  "username":"vikas",
+  "comments":[ ],
+  "status":true
+}
+
+# update article by author
+###
+PUT http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+  "articleId":"1709140063",
+  "title":"Fundamentals of JavaScript",
+  "category":"programming",
+  "content":"web pages could only be static, lacking the capability for dynamic behavior after the page was loaded in the browser. There was a desire in the flourishing web development scene to remove this limitation, so in 1995, Netscape decided to add a scripting language to Navigator. They pursued two routes to achieve this: collaborating with Sun Microsystems to embed the Java programming language, while also hiring Brendan Eich to embed the Scheme language.",
+  "dateOfCreation":"2024-02-28T17:07:43.831Z",
+  "dateOfModification":"{{$datetime iso8601}}",
+  "username":"vikas",
+  "comments":[ ],
+  "status":true
+}
+
+# soft delete/restore an article by article id
+###
+PUT http://localhost:4000/author-api/article/1711260701733
+Content-Type: application/json
+
+{
+  "articleId":"1711260701733",
+  "title":"C",
+  "category":"programming",
+  "content":"C is a powerful and widely-used programming language renowned for its efficiency and versatility. Developed in the early 1970s by Dennis Ritchie at Bell Labs, C has since become one of the most influential programming languages, serving as the foundation for many modern languages and operating systems. Its simplicity, portability, and low-level access to memory make it ideal for system programming, embedded systems, and performance-critical applications. C's syntax emphasizes structured programming, with features such as functions, control flow constructs, and a rich standard library. Despite its age, C remains relevant today, playing a pivotal role in industries such as software development, operating systems, game development, and more. Its enduring popularity stems from its balance of power, efficiency, and broad applicability across various domains.",
+  "dateOfCreation":"2024-03-24T06:11:41.733Z",
+  "dateOfModification":"{{$datetime iso8601}}",
+  "username":"vikas",
+  "comments":[],
+  "status": true
+}
+
+# get article of same author by username
+###
+GET http://localhost:4000/author-api/articleS/vikas
+
+### get deleted articles 
+GET http://localhost:4000/author-api/deletedArticles/vikas
